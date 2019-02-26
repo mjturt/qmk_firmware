@@ -6,7 +6,7 @@
 
 /* Layer definitions
  */
-enum amj40_layers { 
+enum amj40_layers {
    DEFAULT,
    SPECIAL,
    NUMBERS,
@@ -33,51 +33,51 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    // 0: Default
    [DEFAULT] = LAYOUT_ortholinear(
-         TAB_NUP, KC_Q,    KC_W,    KC_E,    KC_R,  KC_T,  KC_Y,  KC_U,  KC_I,    KC_O,    KC_P,       KC_BSPC, 
-         ESC_NAV, KC_A,    KC_S,    KC_D,    KC_F,  KC_G,  KC_H,  KC_J,  KC_K,    KC_L,    KC_SCLN,    KC_QUOT, 
-         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,  KC_B,  KC_N,  KC_M,  KC_COMM, KC_DOT,  KC_SLSH,    ENT_NAV, 
+         TAB_NUP, KC_Q,    KC_W,    KC_E,    KC_R,  KC_T,  KC_Y,  KC_U,  KC_I,    KC_O,    KC_P,       KC_BSPC,
+         ESC_NAV, KC_A,    KC_S,    KC_D,    KC_F,  KC_G,  KC_H,  KC_J,  KC_K,    KC_L,    KC_SCLN,    KC_QUOT,
+         KC_LSFT, KC_Z,    KC_X,    KC_C,    KC_V,  KC_B,  KC_N,  KC_M,  KC_COMM, KC_DOT,  KC_SLSH,    ENT_NAV,
          KC_LCTL, KC_LGUI, KC_LEAD, KC_LALT, M_SPE,      SPC_FUN,        M_NUM, KC_RALT, RALT(KC_2), RSFT_T(KC_BSLS)),
 
    // 1: Special characters
    [SPECIAL] = LAYOUT_ortholinear(
-         KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    KC_CIRC,       KC_AMPR,    KC_ASTR,    KC_LPRN,       KC_RPRN, _______, 
-         _______, KC_RBRC, _______, _______, _______, RALT(KC_4), RALT(KC_RBRC), KC_ASTR,    KC_LPRN,    RALT(KC_MINS), KC_RCBR, KC_PIPE, 
-         _______, KC_PLUS, KC_EQL,  KC_LBRC, _______, _______,    _______,       RALT(KC_8), RALT(KC_9), KC_MINS,       KC_UNDS, _______, 
+         KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    KC_CIRC,       KC_AMPR,    KC_ASTR,    KC_LPRN,       KC_RPRN, _______,
+         _______, KC_RBRC, _______, _______, _______, RALT(KC_4), RALT(KC_RBRC), KC_ASTR,    KC_LPRN,    RALT(KC_MINS), KC_RCBR, KC_PIPE,
+         _______, KC_PLUS, KC_EQL,  KC_LBRC, _______, _______,    _______,       RALT(KC_8), RALT(KC_9), KC_MINS,       KC_UNDS, _______,
          _______, _______, _______, _______, _______,                 _______,               _______,    _______,       _______, _______),
 
    // 2: Numbers
    [NUMBERS] = LAYOUT_ortholinear(
-         KC_GRV,  KC_1,          KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC, 
-         _______, _______,       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
-         _______, RALT(KC_NUBS), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
+         KC_GRV,  KC_1,          KC_2,    KC_3,    KC_4,    KC_5,    KC_6,    KC_7,    KC_8,    KC_9,    KC_0,    KC_BSPC,
+         _______, _______,       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+         _______, RALT(KC_NUBS), _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
          _______, _______,       _______, _______, _______,          _______,          _______, _______, _______, _______),
 
-   // 3: Navigation, arrows(jklö)
+   // 3: Navigation, arrows(hjkl)
    [NAVIGATION] = LAYOUT_ortholinear(
-         TG_NUP,  _______, _______, _______, KC_PSCR, _______, KC_PGUP, KC_HOME, KC_ESC,  KC_END,  KC_BSPC, KC_DEL, 
-         _______, TG_GAM,  _______, _______, _______, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, KC_ENT, 
-         _______, BL_TOGG, BL_STEP, _______, _______, _______, _______, _______, KC_MUTE, _______, KC_VOLU, _______, 
+         TG_NUP,  _______, _______, _______, KC_PSCR, KC_PGUP, _______, KC_HOME, KC_ESC,  KC_END,  KC_BSPC, KC_DEL,
+         _______, TG_GAM,  _______, _______, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_ENT,
+         _______, BL_TOGG, BL_STEP, _______, _______, _______, _______, _______, KC_MUTE, _______, KC_VOLU, _______,
          _______, _______, _______, _______, _______,            KC_MPLY,        _______, KC_MPRV, KC_VOLD, KC_MNXT),
 
    // 4: Function keys
    [FUNCTION] = LAYOUT_ortholinear(
-         KC_GRV,  KC_F1,         KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,      KC_F8,      KC_F9,   KC_F10,  _______, 
-         _______, KC_F11,        KC_F12,  _______, _______, _______, _______, RALT(KC_7), RALT(KC_0), _______, _______, _______, 
-         _______, RALT(KC_NUBS), _______, _______, _______, _______, _______, KC_NUBS,    S(KC_NUBS), _______, _______, _______, 
+         KC_GRV,  KC_F1,         KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,      KC_F8,      KC_F9,   KC_F10,  _______,
+         _______, KC_F11,        KC_F12,  _______, _______, _______, _______, RALT(KC_7), RALT(KC_0), _______, _______, _______,
+         _______, RALT(KC_NUBS), _______, _______, _______, _______, _______, KC_NUBS,    S(KC_NUBS), _______, _______, _______,
          _______, _______,       _______, _______, _______,          _______,             _______,    _______, _______, _______),
 
    // 5: Numpad
    [NUMPAD] = LAYOUT_ortholinear(
-         _______, _______, _______, _______, _______, _______, KC_7, KC_8, KC_9,    KC_MINS, KC_SLSH, _______, 
-         _______, _______, _______, _______, _______, _______, KC_4, KC_5, KC_6,    KC_PIPE, KC_AMPR, _______, 
-         _______, _______, _______, _______, _______, _______, KC_1, KC_2, KC_3,    _______, KC_COMM, _______, 
+         _______, _______, _______, _______, _______, _______, KC_7, KC_8, KC_9,    KC_MINS, KC_SLSH, _______,
+         _______, _______, _______, _______, _______, _______, KC_4, KC_5, KC_6,    KC_PIPE, KC_AMPR, _______,
+         _______, _______, _______, _______, _______, _______, KC_1, KC_2, KC_3,    _______, KC_COMM, _______,
          _______, _______, _______, _______, _______,          KC_0,       KC_RPRN, _______, _______, _______),
 
    // 6: Arrow layer for some games
    [GAMING] = LAYOUT_ortholinear(
-         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
-         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, 
-         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_UP,   _______, 
+         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______,
+         _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_UP,   _______,
          _______, _______, _______, _______, _______,          _______,          _______, KC_LEFT, KC_DOWN, KC_RGHT),
 
 };
