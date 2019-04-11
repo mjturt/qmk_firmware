@@ -42,7 +42,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    [SPECIAL] = LAYOUT_ortholinear(
          KC_TILD, KC_EXLM, KC_AT,   KC_HASH, KC_DLR,  KC_PERC,    KC_CIRC,       KC_AMPR,    KC_ASTR,    KC_LPRN,       KC_RPRN, _______,
          _______, KC_RBRC, _______, _______, _______, RALT(KC_4), RALT(KC_RBRC), KC_ASTR,    KC_LPRN,    RALT(KC_MINS), KC_RCBR, KC_PIPE,
-         _______, KC_PLUS, KC_EQL,  KC_LBRC, _______, _______,    _______,       RALT(KC_8), RALT(KC_9), KC_MINS,       KC_UNDS, _______,
+         _______, KC_PLUS, KC_EQL,  KC_LBRC, _______, _______,    _______,       RALT(KC_7), RALT(KC_0), KC_MINS,       KC_UNDS, _______,
          _______, _______, _______, _______, _______,                 _______,               _______,    _______,       _______, _______),
 
    // 2: Numbers
@@ -62,7 +62,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
    // 4: Function keys
    [FUNCTION] = LAYOUT_ortholinear(
          KC_GRV,  KC_F1,         KC_F2,   KC_F3,   KC_F4,   KC_F5,   KC_F6,   KC_F7,      KC_F8,      KC_F9,   KC_F10,  _______,
-         _______, KC_F11,        KC_F12,  _______, _______, _______, _______, RALT(KC_7), RALT(KC_0), _______, _______, _______,
+         _______, KC_F11,        KC_F12,  _______, _______, _______, _______, RALT(KC_8), RALT(KC_9), _______, _______, _______,
          _______, RALT(KC_NUBS), _______, _______, _______, _______, _______, KC_NUBS,    S(KC_NUBS), _______, _______, _______,
          _______, _______,       _______, _______, _______,          _______,             _______,    _______, _______, _______),
 
