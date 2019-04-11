@@ -54,7 +54,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
    // 3: Navigation, arrows(hjkl)
    [NAVIGATION] = LAYOUT_ortholinear(
-         TG_NUP,  _______, _______, _______, KC_PSCR, KC_PGUP, _______, KC_HOME, KC_ESC,  KC_END,  KC_BSPC, KC_DEL,
+         TG_NUP,  _______, _______, _______, KC_PSCR, KC_PGUP, _______, KC_HOME, KC_END,  KC_ESC,  KC_BSPC, KC_DEL,
          _______, TG_GAM,  _______, _______, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_ENT,
          _______, BL_TOGG, BL_STEP, _______, _______, _______, _______, _______, KC_MUTE, _______, KC_VOLU, _______,
          _______, _______, _______, _______, _______,            KC_MPLY,        _______, KC_MPRV, KC_VOLD, KC_MNXT),
