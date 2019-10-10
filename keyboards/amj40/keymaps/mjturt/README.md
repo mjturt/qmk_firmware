@@ -1,5 +1,5 @@
-mjturt keymap for AMJ40 ortholinear
-=====================
+# mjturt keymap for AMJ40 ortholinear
+
 Keymap is for planck-like ortholinear AMJ40 keyboard. It is intended to use with finnish software layout.
 
 - Nordic layout kept in mind
@@ -7,8 +7,17 @@ Keymap is for planck-like ortholinear AMJ40 keyboard. It is intended to use with
 - Vi-like
 - Leader key stuff
 - Backlighting and "caps lock led" reacting to layers
+
+#### Build
+```
+make amj40:mjturt
+```
+
+## Leader key
+- VM workspace
+- IP
  
-#### Layers:
+## Layers:
 - Default (DEF)
 - M1: Special characters (SPC)
 - M2: Numbers (NUM)
@@ -110,6 +119,7 @@ FI-keymap translations on the right of diagram
 └──────┴──────┴──────┴──────┴──────┴────────────────────┴──────┴──────┴──────┴──────┘
 ```
 
-## Leader key
-- VM workspace
-- IP
+## Picture
+![amj40](amj40-mjturt.jpg)
+
+

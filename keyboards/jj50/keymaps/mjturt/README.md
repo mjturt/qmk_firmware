@@ -1,12 +1,17 @@
-mjturt keymap for JJ50 ortholinear
-=====================
+# mjturt keymap for JJ50 ortholinear
+
 Keymap is for Preonic-like ortholinear JJ50 keyboard. It is intended to use with finnish software layout.
 
 - Nordic layout kept in mind
 - Designed for generic use and programming
 - Vi-like
+
+#### Build & Program
+```
+make jj50:mjturt:program
+```
  
-#### Layers:
+## Layers:
 - Default (DEF)
 - Raise: Special characters (RAISE)
 - Lower: Numbers and more special characters (LOWER)
@@ -73,3 +78,6 @@ __Diagrams shows keys in finnish layout__
  |      |      |      |      |      |    Pause    |      |      | Prev |VolDn | Next |
  `-----------------------------------------------------------------------------------'
 ```
+
+## Picture
+![jj50](jj50-mjturt.jpg)
