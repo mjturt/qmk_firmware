@@ -28,6 +28,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define RAISE 2
 #define LOWER 3
 #define GAM 4
+#define NUM 5
 
 // Custom key shorteners
 #define TAB_NAV LT(NAV, KC_TAB)
@@ -69,7 +70,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * | Shift|   Z  |   X  |   C  |   V  |   B  |   N  |   M  |   ,  |   .  |   -  |Etr/M1|
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * | Ctrl | GUI  |   /  | GUI  |Raise |    Space    |Lower | RALT | RGUI |  @   |'/RSHT|
+     * | Ctrl | GUI  | M_NUM| GUI  |Raise |    Space    |Lower | RALT | RGUI |  @   |'/RSHT|
      * `-----------------------------------------------------------------------------------'
      */
     [DEF] = LAYOUT( \
@@ -77,7 +78,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         TAB_NAV, KC_Q,    KC_W,            KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,       KC_BSPC, \
         KC_ESC,  KC_A,    KC_S,            KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L,    KC_SCLN,    KC_QUOT, \
         KC_LSFT, KC_Z,    KC_X,            KC_C,    KC_V,    KC_B,    KC_N,    KC_M,    KC_COMM, KC_DOT,  KC_SLSH,    ENT_NAV, \
-        KC_LCTL, KC_LGUI, LSFT(KC_7),      KC_LALT, MO(RAISE),KC_SPC,KC_SPC,MO(LOWER),  KC_RALT, KC_RGUI, RALT(KC_2), RSFT_T(KC_BSLS) \
+        KC_LCTL, KC_LGUI, MO(NUM),         KC_LALT, MO(RAISE),KC_SPC,KC_SPC,MO(LOWER),  KC_RALT, KC_RGUI, RALT(KC_2), RSFT_T(KC_BSLS) \
     ),
 
     /* Raise
@@ -128,7 +129,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * |      |      |      |      |PrnScr| PgUp |      | Home | End  | Esc  | Bspc | Del  |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |TG_GAM|RGB_TG|RGB_MO|      |      | PgDn | Left | Down |  Up  |Right |      |Enter |
+     * |TG_GAM|RGB_TG|RGB_MO|RGB_HI|      | PgDn | Left | Down |  Up  |Right |      |Enter |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * |      |BL_TG |BL_ST |      |      |      |      |      | Mute |      |VolUp |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
@@ -138,7 +139,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     [NAV] = LAYOUT( \
        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, RESET, \
        _______, _______, _______, _______, KC_PSCR, KC_PGUP, _______, KC_HOME, KC_END,  KC_ESC,  KC_BSPC, KC_DEL,\
-       TG(GAM), RGB_TOG, RGB_MOD, _______, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_ENT,\
+       TG(GAM), RGB_TOG, RGB_MOD, RGB_HUI, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_ENT,\
        _______, BL_TOGG, BL_STEP, _______, _______, _______, _______, _______, KC_MUTE, _______, KC_VOLU, _______, \
        _______, _______, _______, _______, _______, KC_MPLY, KC_MPLY, _______, _______, KC_MPRV, KC_VOLD, KC_MNXT    \
     ),
@@ -162,5 +163,26 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
        _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_UP,   _______, \
        _______, _______, _______, _______, _______, _______, _______, _______, _______, KC_LEFT, KC_DOWN, KC_RGHT  \
+    ),
+
+    /* Numpad + mouse
+     * ,-----------------------------------------------------------------------------------.
+     * |      |      |      |      |      |      |      |      |      |      |      |      |
+     * |------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |      |      |  7   |  8   |  9   |      |      |
+     * |------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |      |      |  4   |  5   |  6   |      |      |
+     * |------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |      |      |  1   |  2   |  3   | MUp  |      |
+     * |------+------+------+------+------+------+------+------+------+------+------+------|
+     * |      |      |      |      |      |      0      | MBTN1| MBTN3|MLeft |MDown |MRight|
+     * `-----------------------------------------------------------------------------------'
+     */
+    [NUM] = LAYOUT( \
+       _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, \
+       _______, _______, _______, _______, _______, _______, _______, KC_7,    KC_8,    KC_9,    _______, _______, \
+       _______, _______, _______, _______, _______, _______, _______, KC_4,    KC_5,    KC_6,    _______, _______, \
+       _______, _______, _______, _______, _______, _______, _______, KC_1,    KC_2,    KC_3,    KC_MS_U, _______, \
+       _______, _______, _______, _______, _______, KC_0,    KC_0,    KC_BTN1, KC_BTN2, KC_MS_L, KC_MS_D, KC_MS_R  \
     )
 };
