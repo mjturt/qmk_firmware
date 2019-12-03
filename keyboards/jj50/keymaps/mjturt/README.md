@@ -8,7 +8,7 @@ Keymap is for Preonic-like ortholinear JJ50 keyboard. It is intended to use with
 
 #### Build & Program
 ```
-make jj50:mjturt:program
+make jj50:mjturt:flash
 ```
  
 ## Layers:
