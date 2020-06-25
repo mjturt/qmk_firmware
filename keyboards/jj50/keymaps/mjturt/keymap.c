@@ -25,6 +25,7 @@
 // Custom key shorteners
 #define TAB_NAV LT(NAV, KC_TAB)
 #define ENT_NAV LT(NAV, KC_ENT)
+#define DB_CTRL RCTL(KC_LCTRL)
 
 // Layers
 enum layers {
@@ -47,6 +48,8 @@ void keyboard_post_init_user(void) {
     rgblight_enable_noeeprom();
     rgblight_sethsv_noeeprom(205, 255, 255);
     rgblight_mode_noeeprom(RGBLIGHT_MODE_BREATHING + 2);
+    backlight_enable();
+    backlight_level(1);
 }
 
 const uint8_t RGBLED_RAINBOW_SWIRL_INTERVALS[] PROGMEM = {1,5,5};
@@ -187,7 +190,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * |TG_GAM|RGB_TG|RGB_MO|RGB_HI|      | PgDn | Left | Down |  Up  |Right |      |Enter |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
-     * |      |BL_TG |BL_ST |      |      |      |      | Mute |      |      |VolUp |      |
+     * |      |BL_TG |BL_DEC|BL_INC|      |      |      | Mute |      |      |VolUp |      |
      * |------+------+------+------+------+------+------+------+------+------+------+------|
      * |      |      |      |      |      |    Pause    |      |      | Prev |VolDn | Next |
      * `-----------------------------------------------------------------------------------'
@@ -196,7 +199,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______, _______,  _______, _______, _______, _______, _______, _______, _______, _______, _______, RESET, \
             _______, MYRGB_TG, _______, _______, KC_PSCR, KC_PGUP, _______, KC_HOME, KC_END,  KC_ESC,  KC_BSPC, KC_DEL,\
             TG(GAM), RGB_TOG,  RGB_MOD, RGB_HUI, _______, KC_PGDN, KC_LEFT, KC_DOWN, KC_UP,   KC_RGHT, _______, KC_ENT,\
-            _______, BL_TOGG,  BL_STEP, _______, _______, _______, _______, KC_MUTE, _______, _______, KC_VOLU, _______, \
+            _______, BL_TOGG,  BL_DEC,  BL_INC,  _______, _______, _______, KC_MUTE, _______, _______, KC_VOLU, _______, \
             _______, _______,  _______, _______, _______, KC_MPLY, KC_MPLY, _______, _______, KC_MPRV, KC_VOLD, KC_MNXT    \
             ),
 
@@ -239,6 +242,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______, _______, _______, _______, _______, _______, _______, KC_7,    KC_8,    KC_9,    _______, KC_WH_U, \
             _______, _______, _______, _______, _______, _______, _______, KC_4,    KC_5,    KC_6,    _______, KC_WH_D, \
             _______, _______, _______, _______, _______, _______, _______, KC_1,    KC_2,    KC_3,    KC_MS_U, KC_BTN2, \
-            _______, _______, _______, _______, _______, KC_0,    KC_0,    _______, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R  \
+            DB_CTRL, _______, _______, _______, _______, KC_0,    KC_0,    _______, KC_BTN1, KC_MS_L, KC_MS_D, KC_MS_R  \
             )
 };
