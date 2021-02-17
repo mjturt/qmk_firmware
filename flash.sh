@@ -52,8 +52,7 @@ else
   case "$1" in
     -h | --help)
       echo "Script to automate keyboard flashing process"
-      echo "Handy when you dont have extra keyboard"
-      echo "Usage: ./dfu.sh firmware.hex"
+      echo "Usage: ./flash.sh preonic/jj50"
       exit 0
       ;;
     jj50)
@@ -86,13 +85,14 @@ else
           sleep 0.3
           info "Done"
           ;;
-        preonic)
-          info "Start compiling and flashing"
-          make preonic/rev3:mjturt:dfu-util
-          info "Done"
-          ;;
-        *) exit 0 ;;
+        *) exit 1 ;;
       esac
       ;;
+    preonic)
+      info "Start compiling and flashing"
+      make preonic/rev3:mjturt:dfu-util
+      info "Done"
+      ;;
+    *) exit 1 ;;
   esac
 fi
